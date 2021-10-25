@@ -16,7 +16,7 @@ class LoadingButton @JvmOverloads constructor(
     private var widthSize = 0
     private var heightSize = 0
 
-    private val valueAnimator = ValueAnimator.ofInt(0, 100).setDuration(2000)
+    private val valueAnimator = ValueAnimator.ofInt(0, 360).setDuration(2000)
 
     var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
 
@@ -41,6 +41,7 @@ class LoadingButton @JvmOverloads constructor(
     private var buttonBackgroundColor = 0
     private var buttonTextColor = 0
     private var buttonLoadingColor = 0
+    private var buttonCircleColor = 0
 
     private var buttonTextStr = ""
     private var progress = 0
@@ -58,6 +59,7 @@ class LoadingButton @JvmOverloads constructor(
             buttonBackgroundColor = getColor(R.styleable.LoadingButton_backgroundColor, 0)
             buttonTextColor = getColor(R.styleable.LoadingButton_textColor, 0)
             buttonLoadingColor = getColor(R.styleable.LoadingButton_buttonLoadingColor, 0)
+            buttonCircleColor = getColor(R.styleable.LoadingButton_buttonCircleColor, 0)
         }
 
         buttonState = ButtonState.Completed
@@ -95,10 +97,14 @@ class LoadingButton @JvmOverloads constructor(
 
         // loading button
         paint.color = buttonLoadingColor
-        canvas?.drawRect(0f, 0f, widthSize * progress/100f, heightSize.toFloat(), paint)
+        canvas?.drawRect(0f, 0f, widthSize * progress/360f, heightSize.toFloat(), paint)
 
         // text
         paint.color = buttonTextColor
         canvas?.drawText(buttonTextStr, widthSize/2.0f, heightSize/2.0f + 30.0f, paint)
+
+        // circle
+        paint.color = buttonCircleColor
+        canvas?.drawArc(widthSize - 200f,50f,widthSize - 100f,150f,0f, progress.toFloat(), true, paint)
     }
 }

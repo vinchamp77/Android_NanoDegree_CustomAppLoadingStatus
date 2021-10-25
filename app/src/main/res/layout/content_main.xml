@@ -61,6 +61,7 @@
         app:backgroundColor="@color/colorPrimary"
         app:textColor="@color/white"
         app:buttonLoadingColor="@color/colorPrimaryDark"
+        app:buttonCircleColor="@color/colorAccent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

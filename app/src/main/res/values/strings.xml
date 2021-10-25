@@ -3,10 +3,12 @@
     <string name="app_description">Download files from Internet</string>
     <string name="action_settings">Settings</string>
 
-
     <string name="notification_title">Udacity: Android Kotlin Nanodegree </string>
     <string name="notification_description">The Project 3 repository is downloaded</string>
     <string name="notification_button">See changes</string>
+
+    <string name="notification_channel_name">ND940C3-Channel</string>
+    <string name="notification_channel_name_description">ND940C3-Channel Description</string>
 
     <string name="button_name">Download</string>
     <string name="button_loading">We are loading </string>

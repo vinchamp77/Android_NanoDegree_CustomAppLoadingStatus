@@ -4,5 +4,6 @@
         <attr name="backgroundColor" format="color" />
         <attr name="textColor" format="color" />
         <attr name="buttonLoadingColor" format="color"/>
+        <attr name="buttonCircleColor" format="color"/>
     </declare-styleable>
 </resources>
